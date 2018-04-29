@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
 
     'users',
     'todos',
@@ -146,3 +147,17 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=users,todos',
 ]
+
+# Swagger Settings
+SWAGGER_SETTINGS = {
+    "USE_SESSION_AUTH": False,
+    "JSON_EDITOR": True,
+    "SHOW_REQUEST_HEADERS": True,
+    'SECURITY_DEFINITIONS': {
+        "api_key": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        },
+    }
+}
